@@ -1,1 +1,1 @@
-PAPIERLOS v0.2.1 Hotfix: Behebt JavaScript-Startfehler (leere Ansichten). Alle bisherigen lokalen Einträge bleiben erhalten. Auf GitHub index.html ersetzen, Commit changes, App neu laden. Keine Website-Daten löschen.
+PAPIERLOS v0.2.2: Reparatur und Fehlerdiagnose. index.html und sw.js im bestehenden GitHub-Repository ersetzen, Commit changes. Vorhandene lokale Daten nicht löschen. Erst mit Testdokumenten testen. Bei Fehlermeldung Screenshot senden.
