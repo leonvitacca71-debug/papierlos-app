@@ -1,37 +1,22 @@
-# PAPIERLOS – Web-App Version 0.1
+# PAPIERLOS Web-App v0.2
 
-## Was funktioniert
-- Startseite mit Aufgaben, Zahlungen und Fristen
-- Dokumentenliste mit Kategorien und Suche
-- Kalenderansicht mit Monatsnavigation und Fälligkeiten
-- Neue Dokument-Metadaten, Zahlungen und Fristen anlegen
-- Aufgaben erledigen / zurücksetzen, Dokumenteinträge löschen
-- Speicherung lokal im Browser (localStorage), ohne Konto
-- PWA-Manifest, Offline-Cache und iPhone-Home-Screen-Icon
+## Neu
+- Fotoaufnahme über iPhone-Dateiauswahl/Kamera (je nach iOS-Menü)
+- PDF-Import aus Dateien
+- Foto-Vorschau und PDF öffnen
+- Dateien lokal in IndexedDB (bis 15 MB je Datei)
+- Bestehende v0.1-Einträge bleiben erhalten (`papierlos_v01` localStorage)
+- Service Worker mit neuem Cache `papierlos-v02`
 
-## Einschränkungen
-- Keine echten PDF- oder Foto-Uploads; Dokumente sind derzeit nur Datensätze.
-- Keine OCR, KI, Push-Benachrichtigungen oder Cloud-Synchronisation.
-- Kein App-Store-Build; keine native SwiftUI-Ausführung.
-- Demo-Daten sind als Beispiele gekennzeichnet.
-- Browserdaten können verloren gehen. Keine sensiblen Unterlagen verwenden.
-- Noch nicht auf einem realen iPhone getestet.
+## Installation / Update über GitHub Pages
+Im bestehenden Repository `papierlos-app` die Dateien `index.html`, `sw.js`, `manifest.webmanifest`, `icon.png` hochladen und gleichnamige Dateien überschreiben. README kann ebenfalls ersetzt werden. Direkt in `main` committen. Danach die App schließen und neu öffnen; bei alter Ansicht Safari-Seite neu laden.
 
-## Kostenlos auf dem iPhone bereitstellen
-1. ZIP entpacken.
-2. Alle Dateien aus dem Ordner `PAPIERLOS-WebApp` in ein neues öffentliches GitHub-Repository hochladen (keine echten persönlichen Dokumente).
-3. In GitHub unter Settings > Pages die Veröffentlichung aus dem Branch `main`, Ordner `/ (root)` aktivieren.
-4. Die HTTPS-URL auf dem iPhone in Safari öffnen.
-5. Teilen > Zum Home-Bildschirm > Hinzufügen.
+## Test
+1. Bestehende v0.1-Einträge prüfen.
+2. Plus → Dokument → Foto aufnehmen oder PDF auswählen → Speichern.
+3. Dokumente → Öffnen → Vorschau prüfen.
+4. App komplett schließen, neu öffnen und Datei erneut prüfen.
+5. Eintrag löschen und prüfen, dass er verschwindet.
 
-Alternative: Dateien über einen statischen HTTPS-Host wie Netlify Drop bereitstellen. HTTPS ist für die PWA erforderlich.
-
-## Prüfschritte
-1. App starten und Start/Dokumente/Kalender wechseln.
-2. Über + ein Dokument hinzufügen und in Dokumente suchen.
-3. Über + eine Zahlung mit Fälligkeit hinzufügen.
-4. Zahlung als erledigt markieren.
-5. Safari bzw. die App schließen, neu öffnen, Einträge prüfen.
-6. Flugmodus aktivieren und App erneut starten, um Offline-Cache zu prüfen.
-
-Hinweis: Für echte App-Store-Veröffentlichung ist später ein separater nativer Build nötig.
+## Grenzen
+Dies ist eine lokale Test-PWA, **kein** sicherer Dokumententresor. iOS kann Website-Daten unter bestimmten Umständen löschen. Kein Cloud-Backup, keine Verschlüsselung auf App-Ebene, kein OCR/AI, keine Push-Erinnerungen. Keine echten sensiblen Unterlagen verwenden. Funktionalität muss auf echtem iPhone noch getestet werden.
