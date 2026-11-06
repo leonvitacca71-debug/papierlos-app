@@ -1,23 +1,19 @@
-# PAPIERLOS v0.2.4 – Speicherreparatur
+# PAPIERLOS v0.3 – Testversion
 
-- IndexedDB-Schreibvorgang gilt erst nach `transaction.oncomplete` als erfolgreich.
-- Nach jedem Foto/PDF-Upload wird die gespeicherte Datei erneut gelesen und die Größe überprüft.
-- Bestehende Daten und Datenbanknamen bleiben erhalten.
-- Service-Worker-Cache-Version erhöht.
+## Installation
+Nur `index.html` und `sw.js` im Root des bestehenden GitHub-Pages-Repositories ersetzen. `manifest.webmanifest` und `icon.png` beibehalten. Die Home-Screen-App nicht löschen.
 
-## Update
-In GitHub `index.html` und `sw.js` im Repository-Hauptverzeichnis ersetzen, committen, GitHub Pages abwarten. Nicht die App oder Website-Daten löschen.
+## Neu
+- Monatskalender mit Markierungen für offene Termine
+- Termine bearbeiten/löschen
+- Wiederkehrende Zahlungen (monatlich/jährlich; nächste Fälligkeit entsteht beim Erledigen)
+- Termine mit bestehenden Dokumenten verknüpfen
+- Smart-Erkennung aus eingefügtem Text, optional textbasierten PDFs über pdf.js-CDN
 
-## Test auf dem iPhone
-Nur über dasselbe Symbol bzw. denselben Browser testen. Testfoto hochladen, sofort öffnen, App vollständig schließen und erneut öffnen, Foto nochmals öffnen. Safari und Home-Bildschirm-Web-App können getrennte Speicherbereiche haben.
+## Grenzen
+Die Smart-Erkennung ist regelbasiert und keine generative KI. Sie kann falsche Beträge/Termine erkennen; Vorschläge müssen geprüft werden. Foto-OCR nur falls die Browser-API `TextDetector` verfügbar ist; sonst Text manuell einfügen. Für echte Cloud-KI ist ein sicherer Server erforderlich. PDFs bleiben lokal gespeichert, aber für das optionale PDF-Textextraktionsmodul wird ein Skript von cdnjs.cloudflare.com geladen; die PDF-Datei selbst wird nicht an einen Server geschickt. Es gibt keine verifizierte Sicherung. Nur Testdaten verwenden.
 
-## Sicherheit
-Keine vertraulichen Dokumente hochladen. Nur lokaler Prototyp, kein Backup und keine garantierte dauerhafte Aufbewahrung.
-
-
-## v0.2.5
-Dokumente können über „Bearbeiten“ geändert werden (Name, Absender, Kategorie, Datum). Anhänge bleiben in IndexedDB unverändert; bestehende Daten werden nicht migriert oder gelöscht.
-
-
-## v0.2.7
-Mobile Vorschau: getrennte Titel-, Metadaten-, Aktions- und Dateibereiche; PDF-Dateiname und Öffnen-Schaltfläche überlappen nicht mehr. Keine Änderung an gespeicherten Daten oder IndexedDB.
+## Durchgeführte Prüfungen
+- JavaScript-Syntax: bestanden
+- Automatische Testfälle für Betrag, Datum, Absender, Titel: bestanden
+- Browser-End-to-End-Test: nicht möglich, lokale HTTP-URLs werden in dieser Umgebung administrativ blockiert.
