@@ -17,3 +17,7 @@ Keine vertraulichen Dokumente hochladen. Nur lokaler Prototyp, kein Backup und k
 
 ## v0.2.5
 Dokumente können über „Bearbeiten“ geändert werden (Name, Absender, Kategorie, Datum). Anhänge bleiben in IndexedDB unverändert; bestehende Daten werden nicht migriert oder gelöscht.
+
+
+## v0.2.7
+Mobile Vorschau: getrennte Titel-, Metadaten-, Aktions- und Dateibereiche; PDF-Dateiname und Öffnen-Schaltfläche überlappen nicht mehr. Keine Änderung an gespeicherten Daten oder IndexedDB.
