@@ -13,3 +13,7 @@ Nur über dasselbe Symbol bzw. denselben Browser testen. Testfoto hochladen, sof
 
 ## Sicherheit
 Keine vertraulichen Dokumente hochladen. Nur lokaler Prototyp, kein Backup und keine garantierte dauerhafte Aufbewahrung.
+
+
+## v0.2.5
+Dokumente können über „Bearbeiten“ geändert werden (Name, Absender, Kategorie, Datum). Anhänge bleiben in IndexedDB unverändert; bestehende Daten werden nicht migriert oder gelöscht.
